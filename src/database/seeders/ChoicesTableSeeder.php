@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use App\Models\Choice;
 
 class ChoicesTableSeeder extends Seeder
 {
@@ -30,7 +31,7 @@ class ChoicesTableSeeder extends Seeder
 
         foreach ($questions as $index => $question) {
             foreach ($choices[$index] as $choice) {
-                $question->choice()->create([
+                $question->choices()->create([
                     'text' => $choice['text'],
                     'is_correct' => $choice['is_correct'],
                 ]);
