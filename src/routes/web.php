@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\QuizController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,6 +24,10 @@ Route::get('/welcome', function () {
     return view('welcome');
 });
 
+Route::get('/quizzes', [QuizController::class, 'index'])->name('quizzes');
+
+
+Route::get('/quizzes/{id}', [QuizController::class, 'show'])->name('quiz');
 
 
 Route::get('/dashboard', function () {
@@ -38,4 +43,4 @@ Route::middleware('auth')->group(function () {
 Route::get('/users', [UserController::class, 'index']);
 
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
