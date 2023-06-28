@@ -59,8 +59,8 @@ class ChoicesTableSeeder extends Seeder
       [
         'id'=>8,
         'question_id'=>3,
-        'text' => 'Internet of Things',
-        'is_correct' => true
+        'text' => 'Information on Tool',
+        'is_correct' => false
       ],
       [
         'id'=>9,
