@@ -18,9 +18,8 @@ class QuizController extends Controller
     }
     public function show($id)
     {
-        $quizzes= Quiz::findOrFail($id);
-        $questions = Question::where('quiz_id', $id)->get();
-
-        return view('quiz', compact('quizzes', 'questions'));
+        $quiz = Quiz::with('questions')->findOrFail($id);
+    
+        return view('quiz', compact('quiz'));
     }
-}
+    }
