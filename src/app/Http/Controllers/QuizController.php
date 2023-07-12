@@ -38,5 +38,17 @@ public function edit($id)
 
     return view('edit', compact('quiz'));
 }
+public function destroy($id)
+{
+    $quiz=Quiz::findOrFail($id);
+
+    //物理削除の場合
+    $quiz->delete();
+
+    //論理削除の場合
+    //$quiz->forceDelete();
+    
+    return redirect()->route('quizzes')->with('message','削除しました');
+}
 
     }

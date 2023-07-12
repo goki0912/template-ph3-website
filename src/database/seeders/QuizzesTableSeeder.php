@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Quiz;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
@@ -23,5 +24,8 @@ class QuizzesTableSeeder extends Seeder
             ],
 
         ]);
+        //ダミーデータ100件
+        Quiz::factory()->count(100)->create();
+
     }
 }

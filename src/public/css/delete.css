@@ -1,0 +1,44 @@
+/* assets/styles/style.css */
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  padding: 20px;
+  background-color: #fff;
+  text-align: center;
+}
+
+.modal-buttons {
+  margin-top: 20px;
+}
+
+.modal-close,
+.modal-confirm {
+  padding: 10px 20px;
+  margin: 0 5px;
+  background-color: #ccc;
+  border: none;
+  cursor: pointer;
+}
+
+.modal-close {
+  background-color: #f1f1f1;
+}
+
+.modal-close:hover,
+.modal-confirm:hover {
+  background-color: #ddd;
+}
