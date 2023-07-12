@@ -12,6 +12,7 @@
 </head>
 <body>
     <h1>{{ $quiz->name }}</h1>
+    <a href="{{ route('quiz.edit', $quiz->id) }}">編集</a>
     @foreach ($quiz->questions as $question)
     <!-- 問題の表示 -->
     <h3>{{ $question->text }}</h3>

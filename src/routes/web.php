@@ -29,6 +29,10 @@ Route::get('/quizzes', [QuizController::class, 'index'])->name('quizzes');
 
 Route::get('/quizzes/{id}', [QuizController::class, 'show'])->name('quiz');
 
+Route::get('/quizzes/{id}/edit', [QuizController::class,'edit'])->name('quiz.edit');
+
+Route::put('/quizzes/{id}', [QuizController::class, 'update'])->name('quiz.update');
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');

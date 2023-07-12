@@ -22,4 +22,21 @@ class QuizController extends Controller
     
         return view('quiz', compact('quiz'));
     }
+    public function update(Request $request,$id)
+    {
+        $quiz=Quiz::findOrFail($id);
+        $quiz->name=$request->input('title');
+        $quiz->save();
+
+        return redirect()->route('quizzes')->with('message','更新されました！');
+    }
+    // QuizController.php
+
+public function edit($id)
+{
+    $quiz = Quiz::findOrFail($id);
+
+    return view('edit', compact('quiz'));
+}
+
     }
